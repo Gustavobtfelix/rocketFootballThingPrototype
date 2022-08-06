@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class gol : MonoBehaviour
 {
+    public Transform go;
     private void OnTriggerEnter2D(Collider2D other) {
-        Destroy(other.gameObject); 
+        Instantiate(other.gameObject, go.position, go.rotation);
+        Destroy(other.gameObject);
         Debug.Log("1");
     }
 }
